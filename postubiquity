@@ -23,3 +23,8 @@ if [ -f /etc/sudoers.backup ];
 fi
  
 #Desinstalación do PinguyBuilder
+pkg_pinguybuilder=$(dpkg-query -W --showformat='${Status}\n' pinguybuilder-menu-based|grep "install ok installed");
+if [ "install ok installed" == "$pkg_pinguybuilder" ];
+	then
+		sudo apt remove -y pinguybuilder-menu-based;
+fi
