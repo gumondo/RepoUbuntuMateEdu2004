@@ -2,4 +2,3 @@
 #
 cd /home/adminpc/.RepoUbuntuMateEdu2004/trunk;
 sudo sh postubiquity;
-sudo apt update;
