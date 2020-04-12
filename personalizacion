@@ -1,13 +1,17 @@
 #!/bin/sh
 #
-#Borrado do instalador que corrixe o erro no lanzador do Ubiquity xerado polo PinguyBuilder
+#Borrado do script que permite que o lanzador do Ubiquity xerado polo PinguyBuilder poida ser empregado
 if [ -f /usr/bin/instalador ];
 	then
 		sudo rm -f /usr/bin/instalador;
 fi
 
-#Borrado do script que instalador que corrixe o erro no Ubiquity xerado polo PinguyBuilder
-if [ -f /usr/bin/instalador ];
+#Borrado do script que comproba que ao iniciar sesión adminpc se empregue o script instalador anterior no Ubiquity
+if [ -f /usr/bin/arranxaubiquity ];
 	then
-		sudo rm -f /usr/bin/instalador;
+		sudo rm -f /usr/bin/arranxaubiquity;
+fi
+if [ -f /home/adminpc/.config/autostart/arranxaubiquity.desktop ];
+	then
+		sudo rm -f /home/adminpc/.config/autostart/arranxaubiquity.desktop;
 fi
