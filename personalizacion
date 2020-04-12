@@ -1,2 +1,13 @@
 #!/bin/sh
 #
+#Borrado do instalador que corrixe o erro no lanzador do Ubiquity xerado polo PinguyBuilder
+if [ -f /usr/bin/instalador ];
+	then
+		sudo rm -f /usr/bin/instalador;
+fi
+
+#Borrado do script que instalador que corrixe o erro no Ubiquity xerado polo PinguyBuilder
+if [ -f /usr/bin/instalador ];
+	then
+		sudo rm -f /usr/bin/instalador;
+fi
