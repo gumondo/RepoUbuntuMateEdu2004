@@ -16,4 +16,10 @@ if [ -f /home/adminpc/.config/autostart/arranxaubiquity.desktop ];
 		sudo rm -f /home/adminpc/.config/autostart/arranxaubiquity.desktop;
 fi
 
-#
+#Corrección do ficheiro sudoers para que deixe de autorizar sen contrasinal os scripts instalador e arranxaubiquity
+if [ -f /etc/sudoers.backup ];
+	then
+		sudo mv -f /etc/sudoers.backup /etc/sudoers;
+fi
+ 
+#Desinstalación do PinguyBuilder
