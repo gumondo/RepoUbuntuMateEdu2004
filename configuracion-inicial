@@ -1,2 +1,14 @@
 #!/bin/sh
 #
+#Copia de seguridade do cartafol /etc/apt
+if [ ! -f /etc/apt.tar.gz ];
+	then
+		sudo tar -zcvf /etc/apt.tar.gz /etc/apt;
+fi
+
+#Instalación do grub-customizer
+pkg_grubcustomizer=$(dpkg-query -W --showformat='${Status}\n' grub-customizer|grep "install ok installed");
+if [ 'install ok installed' != "$pkg_grubcustomizer" ];
+	then
+		sudo apt install -y grub-customizer;
+fi
