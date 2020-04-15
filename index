@@ -2,3 +2,6 @@
 #
 cd /home/adminpc/.RepoUbuntuMateEdu2004/trunk;
 //sudo sh postubiquity;
+sudo sh ppas;
+sudo sh configuracion-inicial;
+sudo sh actualizar;
