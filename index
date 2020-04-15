@@ -1,4 +1,4 @@
 #!/bin/sh
 #
 cd /home/adminpc/.RepoUbuntuMateEdu2004/trunk;
-sudo sh postubiquity;
+//sudo sh postubiquity;
