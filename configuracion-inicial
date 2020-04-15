@@ -12,6 +12,7 @@ if [ 'install ok installed' != "$pkg_grubcustomizer" ];
 	then
 		sudo apt install -y grub-customizer;
 fi
+
 #Corrección da configuración do grub
 grub_hidden=`egrep -c 'GRUB_TIMEOUT_STYLE="hidden"' /etc/default/grub`;
 if [ "$grub_hidden" != "0" ];
@@ -26,4 +27,11 @@ if [ "$grub_timeout" = "0" ];
 		sudo sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub;
 		sudo sed -i '$a\GRUB_TIMEOUT="10"' /etc/default/grub;
 		sudo update-grub;
+fi
+
+#Desabilitar o chash report
+crash_report=`egrep -c 'enabled=1' /etc/default/apport`;
+if [ "$crash_report" = "1" ];
+	then
+		sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport;
 fi
