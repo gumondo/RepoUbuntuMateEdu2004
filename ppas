@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+#Repositorio do Inkscape
 if [ !-f /etc/apt/sources.list.d/inkscape_dev-ubuntu-stable-focal.list ];
   then
-  
+		sudo add-apt-repository -y ppa:inkscape.dev/stable;
+fi
