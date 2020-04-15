@@ -29,4 +29,3 @@ if [ 'install ok installed' = "$pkg_pinguybuilder" ];
 		sudo apt remove -y pinguybuilder-menu-based;
 fi
 clear;
-
