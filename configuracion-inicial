@@ -12,3 +12,18 @@ if [ 'install ok installed' != "$pkg_grubcustomizer" ];
 	then
 		sudo apt install -y grub-customizer;
 fi
+#Corrección da configuración do grub
+grub_hidden=`egrep -c 'GRUB_TIMEOUT_STYLE="hidden"' /etc/default/grub`;
+if [ "$grub_hidden" != "0" ];
+	then
+		sudo sed -i '/GRUB_TIMEOUT_STYLE=/d' /etc/default/grub;
+		sudo sed -i '$a\GRUB_TIMEOUT_STYLE=""' /etc/default/grub;
+		sudo update-grub;
+fi
+grub_timeout=`egrep -c 'GRUB_TIMEOUT="10"' /etc/default/grub`;
+if [ "$grub_timeout" = "0" ];
+	then
+		sudo sed -i '/GRUB_TIMEOUT=/d' /etc/default/grub;
+		sudo sed -i '$a\GRUB_TIMEOUT="10"' /etc/default/grub;
+		sudo update-grub;
+fi
