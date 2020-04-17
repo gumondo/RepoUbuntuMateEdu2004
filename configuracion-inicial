@@ -35,3 +35,12 @@ if [ "$crash_report" = "1" ];
 	then
 		sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport;
 fi
+
+#Arranxo do filtro rápido do synaptic
+sudo killall synaptic;
+pkg_apt-xapian-index=$(dpkg-query -W --showformat='${Status}\n' pkg_apt-xapian-index|grep "install ok installed");
+if [ 'install ok installed' != "$pkg_apt-xapian-indexr" ];
+	then
+		sudo apt install -y apt-xapian-index;
+		sudo update-apt-xapian-index -vf;
+fi
