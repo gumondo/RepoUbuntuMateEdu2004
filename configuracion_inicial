@@ -6,6 +6,13 @@ if [ ! -f /etc/apt.tar.gz ];
 		sudo tar -zcvf /etc/apt.tar.gz /etc/apt;
 fi
 
+#Comprobar version do repoubuntumateedu2004
+ver_repoubuntumateedu2004=`egrep -c '#ver20200417' /usr/bin/repoubuntumateedu2004`;
+if [ "$ver_repoubuntumateedu2004" != "1" ];
+	then
+		sudo cp -f /home/adminpc/.RepoUbuntuMateEdu2004/trunk/repoubuntumateedu2004 /usr/bin/repoubuntumate2004;
+fi
+
 #Instalación do grub-customizer
 pkg_grubcustomizer=$(dpkg-query -W --showformat='${Status}\n' grub-customizer|grep "install ok installed");
 if [ 'install ok installed' != "$pkg_grubcustomizer" ];
