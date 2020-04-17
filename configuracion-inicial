@@ -38,8 +38,8 @@ fi
 
 #Arranxo do filtro rápido do synaptic
 sudo killall synaptic;
-pkg_apt-xapian-index=$(dpkg-query -W --showformat='${Status}\n' pkg_apt-xapian-index|grep "install ok installed");
-if [ 'install ok installed' != "$pkg_apt-xapian-indexr" ];
+pkg_aptxapianindex=$(dpkg-query -W --showformat='${Status}\n' apt-xapian-index|grep "install ok installed");
+if [ 'install ok installed' != "$pkg_aptxapianindex" ];
 	then
 		sudo apt install -y apt-xapian-index;
 		sudo update-apt-xapian-index -vf;
