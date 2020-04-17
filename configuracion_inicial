@@ -10,7 +10,7 @@ fi
 ver_repoubuntumateedu2004=`egrep -c '#ver20200417' /usr/bin/repoubuntumateedu2004`;
 if [ "$ver_repoubuntumateedu2004" != "1" ];
 	then
-		sudo cp -f /home/adminpc/.RepoUbuntuMateEdu2004/trunk/repoubuntumateedu2004 /usr/bin/repoubuntumate2004;
+		sudo cp -f /home/adminpc/.RepoUbuntuMateEdu2004/trunk/repoubuntumateedu2004 /usr/bin/repoubuntumateedu2004;
 fi
 
 #Instalación do grub-customizer
