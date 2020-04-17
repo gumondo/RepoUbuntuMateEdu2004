@@ -7,7 +7,7 @@ if [ ! -f /etc/apt.tar.gz ];
 fi
 
 #Comprobar version do repoubuntumateedu2004
-ver_repoubuntumateedu2004=`egrep -c '#ver20200417' /usr/bin/repoubuntumateedu2004`;
+ver_repoubuntumateedu2004=`egrep -c '#ver20200417.1' /usr/bin/repoubuntumateedu2004`;
 if [ "$ver_repoubuntumateedu2004" != "1" ];
 	then
 		sudo cp -f /home/adminpc/.RepoUbuntuMateEdu2004/trunk/repoubuntumateedu2004 /usr/bin/repoubuntumateedu2004;
