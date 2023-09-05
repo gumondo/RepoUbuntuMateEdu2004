@@ -9,5 +9,5 @@ clear;
 sudo echo "Actualizando scripts e paquetes...";
 sudo svn checkout https://github.com/gumondo/RepoUbuntuMateEdu2004.git /home/adminpc/.RepoUbuntuMateEdu2004;
 sudo chmod 755 -R /home/adminpc/.RepoUbuntuMateEdu2004;
-sudo sh /home/adminpc/.RepoUbuntuMateEdu2004/trunk/index;
+#sudo sh /home/adminpc/.RepoUbuntuMateEdu2004/trunk/index;
 #exit
